@@ -1,0 +1,108 @@
+/* --- Basic Setup --- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/* --- Containers --- */
+.main-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 20;
+}
+
+/* --- Content Styling --- */
+#question {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#answer-input {
+    width: 250px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#answer-input:focus {
+    outline: none;
+    border-color: #a7bfe8;
+}
+
+#submit-btn {
+    padding: 12px 25px;
+    border: none;
+    background-color: #6a82fb;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #5269d4;
+}
+
+#result-message {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* --- Animations --- */
+
+/* X Animation */
+.x-mark {
+    position: absolute;
+    font-size: 40px;
+    color: red;
+    animation: fall 2s linear forwards;
+    user-select: none;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00; /* Default color */
+    opacity: 0.7;
+    animation: fall 3s linear forwards;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotateZ(720deg);
+        opacity: 0;
+    }
+}
